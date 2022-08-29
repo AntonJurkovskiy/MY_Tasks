@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     ext.lifecycle_version = "2.3.1"
-    ext.room_version = "2.4.1"
+    ext.room_version = "2.4.3"
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.0'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0'

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".TasksFragment">
 <data>
+<variable
+    name="viewModel"
+    type="com.azimut4946777.my_tasks.TasksViewModel" />
 
 </data>
 
@@ -16,20 +19,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:inputType="text"
-    android:hint="Enter a Task Name"/>
+    android:hint="Enter a Task Name"
+    android:text="@={viewModel.newTaskName}"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Save Task"/>
+        android:text="Save Task"
+        android:onClick="@{() ->viewModel.addTask()}"/>
 
     <TextView
         android:id="@+id/tasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text= "@string/hello_blank_fragment" />
+        android:text="@{viewModel.tasksString}" />
 
 </LinearLayout>
 </layout>
