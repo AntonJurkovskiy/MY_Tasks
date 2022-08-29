@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.azimut4946777.my_tasks.databinding.FragmentTasksBinding
+import com.hfad.tasks.TaskItemAdapter
 
 class TasksFragment : Fragment() {
     private var _binding: FragmentTasksBinding? = null
@@ -29,7 +30,7 @@ class TasksFragment : Fragment() {
 
         viewModel.tasks.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.data = it
+                adapter.submitList(it)
             }
         })
 
